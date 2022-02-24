@@ -1,0 +1,24 @@
+{
+  "name": "qrserver",
+  "version": "1.0.0",
+  "description": "Serves QR Codes via REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "QR",
+    "Codes",
+    "Shopper",
+    "REST",
+    "API"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1"
+  }
+}

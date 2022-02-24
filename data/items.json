@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "code": "password1",
+        "description": "king",
+        "price": "1.20",
+        "thumbnail": "a@b.com"
+    },
+    {
+        "id": "2",
+        "code": "password3",
+        "description": "code fiddler",
+        "price": "2.40",
+        "thumbnail": "c@d.com"
+    },
+    {
+        "id": "3",
+        "code": "password2",
+        "description": "brexit destroyer",
+        "price": "0.50",
+        "thumbnail": "e@f.com"
+    }
+]
