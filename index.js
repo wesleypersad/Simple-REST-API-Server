@@ -62,7 +62,7 @@ app.get('/api/addresses', (req, res) => {
     });
 });
 // return item with a particular qr code
-app.get("/api/item/", (req, res) => {
+app.get("/api/item", (req, res) => {
     //searching in the database
     let code = ['%'+req.query.code+'%'];
     let sqlquery = "SELECT * FROM items WHERE code LIKE ?";
@@ -145,7 +145,7 @@ try {
 // create connection to the mysqldb
 const mysql = require("mysql");
 const db = mysql.createConnection({
-    host: "localhost",
+    host: process.env.HOST,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
@@ -162,7 +162,7 @@ db.connect((err) => {
 global.db = db;
 
 // use port 3000 or port assigned by local environment for the server
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 // finally, launch our server on port assigned port.
 const server = app.listen(port, () => {
