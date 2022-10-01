@@ -20,23 +20,16 @@ app.use('/images', express.static('public'));
 // include the functions in the ./routes/main.js file
 require("./routes/main") (app);
 
-// create connection to the mysqldb
+// create a pool of connections to the mysql db
 const mysql = require("mysql");
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
 });
 
-// connect to database
-db.connect((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log("Connected to qrcodeshopperdb");
-});
-
+// make the connection available globally
 global.db = db;
 
 // use port 3000 or port assigned by local environment for the server
