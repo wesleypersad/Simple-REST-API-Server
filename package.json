@@ -4,9 +4,9 @@
   "description": "Serves QR Codes via REST API",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
-    "dev":"nodemon index.js",
-    "debug":"node --inspect index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "debug": "node --inspect index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -24,6 +24,7 @@
     "express": "^4.17.2",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
-    "stripe": "^8.204.0"
+    "stripe": "^8.204.0",
+    "util": "^0.12.4"
   }
 }
