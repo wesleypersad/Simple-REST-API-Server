@@ -21,35 +21,16 @@ app.use('/images', express.static('public'));
 require("./routes/main") (app);
 
 // create a pool of connections to the mysql db
-/* const mysql = require("mysql");
+const mysql = require("mysql");
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
-}); */
-
-// try the sequelize library
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USERNAME,
-    process.env.DB_PASSWORD,
-    {
-        host: process.env.DB_HOST,
-        dialect: 'mysql'
-    }
-);
-
-// try the connection
-sequelize.authenticate().then(() => {
-    console.log('Connection has been established successfully.');
-}).catch((error) => {
-    console.error('Unable to connect to the database: ', error);
 });
 
 // make the connection available globally
-//global.db = db;
+global.db = db;
 
 // use port 3000 or port assigned by local environment for the server
 const port = process.env.PORT || 3000;
