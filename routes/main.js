@@ -12,6 +12,7 @@ module.exports = function(app) {
         // execute sql query
         db.query(sqlquery, (err, result) => {
         if (err) {
+            console.log(err.message);
             res.redirect("/");
         }
         res.json(result);
@@ -25,6 +26,7 @@ module.exports = function(app) {
         // execute sql query
         db.query(sqlquery, (err, result) => {
         if (err) {
+            console.log(err.message);
             res.redirect("/");
         }
         res.json(result);
@@ -38,6 +40,7 @@ module.exports = function(app) {
         // execute sql query
         db.query(sqlquery, (err, result) => {
         if (err) {
+            console.log(err.message);
             res.redirect("/");
         }
         res.json(result);

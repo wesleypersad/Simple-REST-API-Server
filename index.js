@@ -1,6 +1,8 @@
 // load up the express framework and body-parser helper and dotenv variables
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 // import the stripe related libraris
@@ -9,13 +11,15 @@ const Stripe = require('stripe');
 const stripe = Stripe(`${process.env.SECRET_KEY}`, {apiVersion: "2020-08-27"});
 
 // create an instance of express to serve our end point
+// use cors to enable cors requests without restriction
 const app = express();
+app.use(cors());
 
 // configure our express instance with some body-parser settings
 // including handling JSON data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/images', express.static('public'));
+app.use('/images', express.static('/public'));
 
 // include the functions in the ./routes/main.js file
 require("./routes/main") (app);
