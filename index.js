@@ -19,7 +19,7 @@ app.use(cors());
 // including handling JSON data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/images', express.static('/public'));
+app.use('/images', express.static('./public'));
 
 // include the functions in the ./routes/main.js file
 require("./routes/main") (app);
